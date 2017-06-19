@@ -7,9 +7,17 @@ console.log("in index.js!");
 		var myCtrl=this;
 		var upperCaseMode=false;
 		myCtrl.name="";
+		myCtrl.email="";
+		myCtrl.phone="";
+		myCtrl.comment="";
+		myCtrl.rating="";
 		myCtrl.clearForm=function () {
 			console.log("in clearForm()!");
 			myCtrl.name="";
+			myCtrl.email="";
+			myCtrl.phone="";
+			myCtrl.comment="";
+			myCtrl.rating="";
 			}
 		myCtrl.toggleCase=function () {
 			console.log("in toggleCase()!");
@@ -24,6 +32,9 @@ console.log("in index.js!");
 			}
 		myCtrl.submitForm=function () {
 			console.log("in submitForm()!");
+			for (var k in myCtrl) {
+				if (myCtrl.hasOwnProperty(k) && typeof(myCtrl[k])!="function") console.log(k,myCtrl[k]);
+				}
 			}
 		}
 	MyApp.controller("MyCtrl",MyCtrl);

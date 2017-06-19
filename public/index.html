@@ -10,14 +10,57 @@
 	<script src="index.js"></script>
 </head>
 <body ng-controller="MyCtrl as myCtrl">
-	<h1>New6</h1>
-	<form name="chrisForm" novalidate ng-submit="myCtrl.submitForm()">
-		Name: <input type="text" length=31 name="name" ng-model="myCtrl.name">
-		<br>
-		<br>
-		<button type="button" ng-click="myCtrl.clearForm()">Clear</button>
-		<button type="button" ng-click="myCtrl.toggleCase()">Case</button>
-		<button type="submit">Submit</button>
-	</form>
+	<h1>Feedback form</h1>
+	<h2>{{ myCtrl.name }}</h2>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<form name="chrisForm" novalidate ng-submit="myCtrl.submitForm()">
+					<div class="form-group">
+						<label for="name">Name:</label>
+						<input type="text" length=31 name="name" ng-model="myCtrl.name" id="name" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for ="email">Email:</label>
+						<input type="email" length=31 name="email" ng-model="myCtrl.email" id="email" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for ="phone">Phone:</label>
+						<input type="tel" length=31 name="phone" ng-model="myCtrl.phone" id="phone" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for ="comment">Comment:</label>
+						<textarea type="text" rows=5 ng-model="myCtrl.comment" id="comment" class="form-control"></textarea>
+					</div>
+					<div class="form-group">
+						<div id="rating">
+							<label for="rating">Rating:</label>
+							<label class="radio-inline"><input type="radio" name="rating" ng-model="myCtrl.rating" value="Good">Good</label>
+							<label class="radio-inline"><input type="radio" name="rating" ng-model="myCtrl.rating" value="Neutral">Neutral</label>
+							<label class="radio-inline"><input type="radio" name="rating" ng-model="myCtrl.rating" value="Bad">Bad</label>
+						</div>
+					</div>
+					<br>
+					<br>
+<!--
+               <div class="btn-group btn-group-justified"></div>
+						<div class="btn-group">
+
+						</div>
+					</div>
+-->
+					<div class="form-group">
+						<button class="btn btn-primary" type="button" ng-click="myCtrl.clearForm()">Clear</button>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-primary" type="button" ng-click="myCtrl.toggleCase()">Case</button>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-primary" type="submit">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
