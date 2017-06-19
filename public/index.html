@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MyApp">
 <head>
 	<meta charset="UTF-8">
 	<title>New6</title>
-	<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.cc">
+	<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
 	<script src="/jquery/dist/jquery.min.js"></script>
 	<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="/angular/angular.min.js"></script>
 	<script src="index.js"></script>
 </head>
-<body>
+<body ng-controller="MyCtrl as myCtrl">
 	<h1>New6</h1>
+	<form name="chrisForm" novalidate ng-submit="myCtrl.submitForm()">
+		Name: <input type="text" length=31 name="name" ng-model="myCtrl.name">
+		<br>
+		<br>
+		<button type="button" ng-click="myCtrl.clearForm()">Clear</button>
+		<button type="button" ng-click="myCtrl.toggleCase()">Case</button>
+		<button type="submit">Submit</button>
+	</form>
 </body>
 </html>
